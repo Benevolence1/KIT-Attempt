@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAVBAR */
+
+.navparent-divider{
+    z-index: 999; 
+    /* Fixed navbar */
+    /* MAKES NAVBAR HIGHEST */
+    width: 100%;
+    /* TAKES UP ALL THE SPACE
+    IN DIV */
+    top: 0;
+    /* NO SPACE FROM TOP */
+    left: 0;
+    /* NO SPACE FROM LEFT */
+    padding: 10PX 25px;
+    position: fixed;
+    /* MAKES NAVBAR FIXED
+    THAT MEANS IT WILL STAY 
+     */
+    background-color: rgb(255, 255, 255);
+}
+
+nav a:link{
+    white-space: nowrap;
+    /* Prevents text 
+    from wrapping */
+ text-decoration: none;
+ font-weight: 300;
+ font-family: Arial, Helvetica, sans-serif;
+ color: black;
+ 
+}
+
+nav a:visited{
+    color: black;
+}
+
+.navbar{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    /* justify content is on
+    the horizontal axis */
+    
+    align-items: center;
+    margin-top: 5px;
+    width: 100%;
+
+}
+
+
+nav{
+    display: flex;
+    justify-content: flex-start;
+    /* justify content flex-start
+    means it starts from the left */
+    align-items: flex-start;
+    /* align items flex-start 
+    means it starts from 
+    the top */
+  gap: 10px;
+}
+
+
+
+
+.logo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-size: 20px;
+ 
+}
+
+
+/* HomePage */
+.homepage{
+    margin-top: 80px;
+    display: flex;
+    position: relative;
+    /* position relative
+    is so that the elements 
+    inside it can be 
+    positioned to the top */
+    height:auto;
+    /* height is set to auto
+    so it adjusts to the content */
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+/* LEFT-SIDE */
+
+.left-split{
+    width: 100%;
+    height: 100vh;
+    
+    background-color: rgb(255, 227, 251);
+}
+
+.left-split-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+
+}
+
+img{
+    /* border: 8px solid rgb(255, 255, 255); */
+    width: 100%;
+    height: 100vh;
+    }
+
+
+
+
+/* RIGHT SIDE
+ */
+
+
+
+.split-R{
+    background-color: rgb(250, 245, 255);
+      width: 100%;
+    height: 100vh;
+    position: relative;
+    
+}
+.split-R-container{
+    padding-left: 100px;
+    padding-right: 15px;
+    position: relative;
+    top: 20%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-div{
+    width: 80%;
+    max-width: 100%;
+    
+}
+
+.H4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    
+    
+   
+}
+
+.emoticon{
+    display: flex;
+    align-items: center;
+}
+
+
+.space{
+    height: 35px;
+}
+
+.p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+/* Moving Section */
+
+.moving-section{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgb(202, 189, 224);
+    color:rgb(255, 255, 255);
+    position: relative;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+
+.moving-content{
+    display: inline-block;
+    padding-right: 100%;
+    will-change: transform;
+    /* this means the element will 
+     be moved */
+    animation: slide-right 40s linear infinite;
+    /* this means to animate the element
+    to start from the left
+    and take 40 seconds
+    and loop infinitely */
+    font-size: 50px;
+
+}
+
+/* Animation for moving content */
+@keyframes slide-right{
+    0%{
+        transform: translateX(-50%);
+    
+    }
+    /*  at 0 the element is at -50% on the x
+    axis which it's already halfway to the left */
+
+    100%{
+        transform: translateX(0%)
+    }
+    /* at 100% the element is at 0% on the x axis
+    which means it restarts */
+}
+
+/* The animation takes 40s which is why it doesn't seem
+so fast or why the animation is smooth */
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* @media is to target specific screen sizes */
+    /* the max-width is so when it gets smaller
+    it does blank for example 768px
+    so when it gets smaller
+     it changes to what's below: */
+
+
+  .homepage {
+    flex-direction: column;
+  }
+  /* flex direction column means the elements stack 
+  vertically in a straight line */
+  .left-split,
+  .split-R {
+    width: 100%;
+    height: auto;
+  }
+
+  /* the L and R taking 100% width and auto height
+  means that they take up the full width of the screen
+  and adjust their height based on content */
+  /* causing a full-width layout on smaller screens */
+
+  nav {
+    height: auto;
+    padding: 1rem;
+  }
+
+  /* the nav having height auto and padding 1rem
+  means it adjusts to the content and adds padding
+  1rem means 16 pixels but for consistent sizing */
+}
